@@ -1,0 +1,6 @@
+@EVFleetManagement_HostAddress = http://localhost:5148
+
+GET {{EVFleetManagement_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
