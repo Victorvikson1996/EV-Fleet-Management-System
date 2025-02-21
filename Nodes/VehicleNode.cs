@@ -2,13 +2,24 @@ using Stateless;
 
 public class VehicleNode
 {
-    private readonly string _id;
+    // private readonly string _id;
+
+    public string _id { get; private set; }
+
+    private string _status;
+
+    public string Status => _stateMachine.State;
+
+
+
     private readonly StateMachine<string, string> _stateMachine;
+    public StateMachine<string, string> StateMachine => _stateMachine;
     private readonly GpsDriver _gpsDriver;
     private readonly BatteryDriver _batteryDriver;
     private readonly ChargingActuator _chargingActuator;
     private readonly MovementActuator _movementActuator;
     private readonly EventBus _eventBus;
+
     private readonly ServiceRegistry _serviceRegistry;
 
     public VehicleNode(EventBus eventBus, ServiceRegistry serviceRegistry, FsmService fsmService)

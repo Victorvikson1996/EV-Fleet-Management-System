@@ -18,6 +18,9 @@ public class ChargingStation
         SubscribeToEvents();
     }
 
+    public bool IsAvailable => _isAvailable;
+    public string id => _id;
+
     private void RegisterWithRegistry()
     {
         _serviceRegistry.Register(new ServiceRegistry.Service(

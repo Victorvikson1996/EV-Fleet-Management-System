@@ -23,7 +23,6 @@ public class FsmService
             .Permit("FINISH", "idle")
             .OnEntry(() => Console.WriteLine("Vehicle is charging"))
             .OnExit(() => Console.WriteLine("Charging finished"));
-
         return machine;
     }
 }

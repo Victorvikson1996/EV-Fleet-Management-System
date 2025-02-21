@@ -6,8 +6,9 @@ public class FleetService : FleetManager
     {
         return new
         {
-            Vehicles = _vehicles.Select(v => new { Id = v._id, Status = v._stateMachine.State }),
-            Stations = _stations.Select(s => new { Id = s._id, IsAvailable = s._isAvailable })
+            Vehicles = _vehicles.Select(v => new { Id = v._id, Status = v.StateMachine.State }),
+            Stations = _stations.Select(s => new { Id = s.id, IsAvailable = s.IsAvailable })
+
         };
     }
 }
